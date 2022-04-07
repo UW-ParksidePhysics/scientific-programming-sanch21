@@ -4,7 +4,7 @@
 % Simulation parameters
 %	These are values particular to the simulation 
 %	that do not change later in the script
-% Intial velocity (v0) = 0 m/s
+% Intial velocity (v0) = 2 m/s
 % Intial height   (h0) = 5 m
 % Gravity          (g) = 9.81 m/s
 % Height of pulley (H) = 10 m 
