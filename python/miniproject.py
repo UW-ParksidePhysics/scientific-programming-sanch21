@@ -28,3 +28,4 @@ heights = height(t)
 print(heights)
 
 plt.plot(t, heights)
+plt.show()
