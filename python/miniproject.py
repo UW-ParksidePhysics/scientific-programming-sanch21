@@ -1,31 +1,44 @@
-# Initial velocity (v0) = 2 m/s
-# Initial height   (h0) = 5 m
-# Gravity          (g)  = 9.81 m/s
-# Height of pulley (H)  = 10 m
-# Radius of pulley (R)  = 1 m
-# Length of rope   (L)  = 15 m
-# Masses           (m1) = 2 kg
-#                  (m2) = 5 kg
-
 from numpy import *
 from matplotlib import *
 import matplotlib.pyplot as plt
+import numpy as np
 
-m1 = 2
+m1 = np.array([2, 3, 4], int)
 m2 = 5
 g = -9.81
 v0 = 2
-a = ((m2 - m1) * g) / (m1 + m2)
+a_list = []
 t = linspace(0, 10)
+h_list = []
 
 
-def height(time):
-    h = v0 * time + 0.5 * a * time ** 2
-    return h
+def acceleration(mass_one):
+    for i in mass_one:
+        a = ((m2 - i) * g) / (i + m2)
+        a_list.append(a)
+        # print(a_list)
+    return a_list
 
 
-heights = height(t)
-print(heights)
+def height(time, accel):
+    for j in accel:
+        h = v0 * time + 0.5 * j * time ** 2
+        h_list.append(h)
+        # print(h_list)
+    return h_list
 
-plt.plot(t, heights)
-plt.show()
+
+heights = height(t, acceleration(m1))
+
+
+def plot_accelerations(time, height_values):
+    for i in heights:
+        plt.plot(t, i)
+    plt.show()
+
+
+# print(heights[0])
+
+
+if __name__ == '__main__':
+    plot_accelerations(t, heights)

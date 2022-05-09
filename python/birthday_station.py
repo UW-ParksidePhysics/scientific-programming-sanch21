@@ -71,6 +71,7 @@ class spacestation:
         rotation = 0
 
 
+
 def bind_mouse(station, vector1, vector2):
     global pause
     if pause: return
@@ -195,6 +196,5 @@ while True:
         if not pause: break
     gotv = False
     click1.visible = click2.visible = False
-
 
 
